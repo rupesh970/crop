@@ -48,7 +48,7 @@ def showdata():
         p['Ph']=i[5]
         p['Rainfall']=i[6]
         p['Result']=i[7]
-        li.append(p)
+        li.append(p)  
     return render_template('showdata.html',data=li)
 
 # @app.route('/showdata')
