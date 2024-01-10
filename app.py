@@ -21,8 +21,8 @@ def prediction():
         with open('model.pkl','rb') as model_file:
             mlmodel=pickle.load(model_file)
         res=mlmodel.predict([[float(nitro),float(phos),float(kp),float(temp),float(hum),float(ph),float(rain)]])
-        # print(res)
-        return render_template("result.html",res=res)
+        print(res)
+        return render_template("result.html",res=res[0])
     else:
         return render_template('prediction.html')
     
@@ -33,7 +33,5 @@ def prediction():
      
          
 #      return render_template('showdata.html')
-   
-
-if _name=='__main__':
-    app.run()
+if __name__=='__main__':
+    app.run(host='0.0.0.0',port = 5055)
